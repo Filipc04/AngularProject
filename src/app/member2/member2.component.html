@@ -7,11 +7,16 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-  <header>
-    <a href="index.html" class="header_link"><img src="/assets/home_icon_white.svg" alt="home icon"> Home</a>
-    <a href="about.html" class="header_link"><img src="/assets/about_icon.svg" alt="about icon"> About</a>
-    <a href="login.html" class="login_link"><img src="/assets/login_icon.svg" alt="login icon"> Login</a>
-  </header>
+    <header>
+        <a routerLink="/index" routerLinkActive="active" class="header_link">
+            <img src="assets/home_icon_white.svg" alt="home icon"> Home</a>
+       
+        <a routerLink="/about" routerLinkActive="active" class="header_link">
+            <img src="assets/about_icon.svg" alt="about icon"> About
+          </a>
+        <a routerLink="/login" routerLinkActive="active" class="login_link">
+            <img src="assets/login_icon.svg" alt="login icon"> Login</a>
+      </header>
 
   <div class="middle_content_fadein">
     <div class="center_tables">

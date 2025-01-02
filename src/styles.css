@@ -17,7 +17,6 @@ html, body {
   font-weight: 400;
   font-style: normal;
   justify-content: space-between;
-  min-height: 100vh;
 }
 
 main {
@@ -89,6 +88,7 @@ header p {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
   color: var(--primary-white);
   position: relative;
+  min-height: 80vh;
 }
 
 .middle_content_fadein{
