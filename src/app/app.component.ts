@@ -8,13 +8,26 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent, AboutComponent, RouterLink, 
-    RouterLinkActive, Member1Component, Member2Component, FooterComponent, 
-    HeaderComponent, LoginComponent, NavbarComponent, RouterModule],
+  imports: [
+    RouterOutlet,
+    HomeComponent,
+    AboutComponent,
+    RouterLink,
+    RouterLinkActive,
+    Member1Component,
+    Member2Component,
+    FooterComponent,
+    HeaderComponent,
+    LoginComponent,
+    NavbarComponent,
+    RouterModule,
+    NgbModule 
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
