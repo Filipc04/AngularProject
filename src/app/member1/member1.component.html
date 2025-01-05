@@ -1,10 +1,10 @@
 
 <div class="middle_content_fadein">
   <div class="center_tables">
-    <h1 class="h1">Filip Carlsson's anime profile</h1>
+    <h1 class="h1" style='color: #d4be98'>Filip Carlsson's anime profile</h1>
       <div class="tables_with_image">
         <div class="tables">
-          <p><b>Personal profile</b></p>
+          <p style='color: #d4be98'><b>Personal profile</b></p>
           <table class="table_border">
             <tr>
               <th>Kategori</th>
@@ -26,7 +26,7 @@
             </tr>
           </table>
           
-          <p><b>Urval av avbetade anime's</b></p>
+          <p style='color: #d4be98'><b>Urval av avbetade anime's</b></p>
           
           <table class="table_border">
             <tr>
@@ -87,21 +87,23 @@
         
       </div>
       
-      <h1>My top 3 animes</h1>
+      <h1 style='color: #d4be98'>My top 3 animes</h1>
 
       <div ngbAccordion #accordion="ngbAccordion">
         <div ngbAccordionItem="first">
           <h2 ngbAccordionHeader>
-            <button ngbAccordionButton>Vinland Saga</button>
+            <button ngbAccordionButton style="color: #d4be98; background-color: #282828;">Vinland Saga</button> <!-- Rubriktext --> <!-- Bakom rubriktext -->
           </h2>
-          <div ngbAccordionCollapse>
-            <div ngbAccordionBody>
+          <div ngbAccordionCollapse style="background-color: #282828;"> <!-- Bakgrundsfärg bakom texten -->
+            <div ngbAccordionBody style="color: #d4be98;"> <!-- Textens färg -->
               <ng-template>
                 Anim pariatur cliche reprehenderit
               </ng-template>
             </div>
           </div>
         </div>
+     
+      
         
         <div ngbAccordionItem="second">
           <h2 ngbAccordionHeader>
