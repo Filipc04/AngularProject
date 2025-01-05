@@ -380,3 +380,7 @@ button[ngbAccordionButton]::after {
 button[ngbAccordionButton][aria-expanded="true"]::after {
   transform: translateY(-50%) rotate(135deg); 
 }
+
+.accordion_text_width{
+  max-width: 500px;
+}
