@@ -337,3 +337,46 @@ a {
 .error_message{
   margin-top: 10px;
 }
+
+button[ngbAccordionButton]:focus {
+  outline: none; 
+  box-shadow: none; 
+  border-color: #d4be98;  
+}
+
+button[ngbAccordionButton] {
+  height: 50px; 
+  line-height: 50px; 
+  padding: 0 10px; 
+  text-align: left; 
+  overflow: hidden; 
+  width: 500px;
+  font-size: 20px;
+  border: 1px solid #d4be98; 
+  box-sizing: border-box; 
+}
+
+div[ngbAccordionCollapse] {
+  overflow-y: 100px; 
+  font-size: 12px;
+
+}
+
+button[ngbAccordionButton]::after {
+  content: ''; 
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: solid #d4be98; 
+  border-width: 0 0.2rem 0.2rem 0; 
+  transform: rotate(45deg); 
+  position: absolute; 
+  right: 10px; 
+  top: 50%; 
+  transform: translateY(-50%) rotate(45deg); 
+  transition: transform 0.2s ease-in-out; 
+}
+
+button[ngbAccordionButton][aria-expanded="true"]::after {
+  transform: translateY(-50%) rotate(135deg); 
+}
