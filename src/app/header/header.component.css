@@ -1,0 +1,48 @@
+
+  header {
+    display: flex;
+    justify-content: left; 
+    gap: 25px; 
+    background-color: var(--primary-black); 
+    width: 100%; 
+    box-sizing: border-box; 
+    align-items: center;
+    padding: 20px;
+  }
+  
+  header p {
+    margin: 0; 
+    font-weight: bold; 
+  }
+  
+  .header_link, .login_link{
+    color:var(--primary-white);
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .header_link::after, .login_link::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-white);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .header_link:hover::after, .login_link:hover::after{
+    transform: scaleX(1);
+  }
+
+  .login_link{
+    margin-left: auto;
+  }
+  
+  .login_link img{
+    height: 20px;
+  }
