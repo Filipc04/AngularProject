@@ -9,6 +9,7 @@
     color: white;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     transition: left 0.3s ease;
+    
   }
 
   .side-nav.active {
@@ -39,3 +40,16 @@
     background-color: #575757;
   }
   
+  .navbar_image_holder {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%; /* Make it span the full navbar height */
+
+}
+
+
+  .navbar_image {
+    height: 40%;
+    border-radius: 5px;
+  }
