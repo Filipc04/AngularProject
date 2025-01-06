@@ -354,7 +354,7 @@ button[ngbAccordionButton] {
   padding: 0 10px; 
   text-align: left; 
   overflow: hidden; 
-  width: 500px;
+  width: 600px;
   font-size: 20px;
   border: 1px solid #d4be98; 
   box-sizing: border-box; 
@@ -362,7 +362,7 @@ button[ngbAccordionButton] {
 
 div[ngbAccordionCollapse] {
   overflow-y: 100px; 
-  font-size: 12px;
+  font-size: 16px;
 
 }
 
@@ -386,5 +386,5 @@ button[ngbAccordionButton][aria-expanded="true"]::after {
 }
 
 .accordion_text_width{
-  max-width: 500px;
+  max-width: 600px;
 }
