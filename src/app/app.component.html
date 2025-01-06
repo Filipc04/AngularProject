@@ -1,4 +1,4 @@
-<app-header></app-header>
-<app-navbar></app-navbar>
+<app-header (toggleNavbarEvent)="navbar.toggleNavbar()"></app-header>
+<app-navbar #navbar></app-navbar>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
