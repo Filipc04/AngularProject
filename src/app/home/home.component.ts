@@ -10,5 +10,6 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  images = ['demonslayer_slideshow.jpg', 'lain_slideshow.jpg', 'mobpsycho_slideshow.jpg'].map((filename) => `assets/${filename}`);
+
 }
