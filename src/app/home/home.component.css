@@ -1,0 +1,29 @@
+/* Center the carousel and ensure images fit properly */
+.middle_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.custom-carousel {
+  width: 100%;
+  max-width: 900px; /* Adjust to your desired max width */
+  margin: 0 auto;
+}
+
+.picsum-img-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Ensures the image fits well */
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+}
