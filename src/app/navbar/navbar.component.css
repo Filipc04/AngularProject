@@ -2,7 +2,7 @@
     position: absolute;
     top: 78px; /*temporary, annars 0, bara för att se hur det ser ut utan overlap*/
     left: 0;
-    height: calc(78vh - 8px - 100px);
+    height: calc(78vh - 78px - 100px);
     width: 250px;
     background-color: #333;
     padding: 20px 0;
