@@ -1,11 +1,8 @@
 <div class="middle_content">
   <h1 class="main_title">Angular Project - 1IK163</h1>
 
-  
-
-
-  <ng-container>
-    @if (images){
+  @if (images) {
+    <div class="carousel-wrapper">
       <ngb-carousel class="custom-carousel">
         <ng-template ngbSlide>
           <div class="picsum-img-wrapper">
@@ -35,13 +32,15 @@
           </div>
         </ng-template>
       </ngb-carousel>
-    }
-    
-  </ng-container>
+    </div>
+  }
 
   <div class="team-members">
-    <a routerLink="/member1" routerLinkActive="active" class="member-text"><b><i>Filip Carlsson</i></b></a>
-    <a routerLink="/member2" routerLinkActive="active" class="member-text"><b><i>Abbe Åkeson</i></b></a>
+    <a routerLink="/member1" routerLinkActive="active" class="member-text">
+      <b><i>Filip Carlsson</i></b>
+    </a>
+    <a routerLink="/member2" routerLinkActive="active" class="member-text">
+      <b><i>Abbe Åkeson</i></b>
+    </a>
   </div>
-
 </div>

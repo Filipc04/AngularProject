@@ -1,4 +1,3 @@
-/* Center the carousel and ensure images fit properly */
 .middle_content {
   display: flex;
   flex-direction: column;
@@ -7,21 +6,30 @@
   padding: 20px;
 }
 
+/* Add the border and styling to the wrapper */
+.carousel-wrapper {
+  width: 100%;
+  max-width: 900px; /* Adjust max width as needed */
+  margin: 0 auto;
+  border: 5px solid var(--primary-white); /* Static border around the entire carousel */
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  overflow: hidden;
+}
+
 .custom-carousel {
   width: 100%;
-  max-width: 900px; /* Adjust to your desired max width */
-  margin: 0 auto;
 }
 
 .picsum-img-wrapper img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover; /* Ensures the image fits well */
+  object-fit: cover; 
 }
 
 .carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5); 
   padding: 10px;
   border-radius: 5px;
   color: #fff;
