@@ -7,7 +7,9 @@
     --primary-gray: #282828; /*For background text*/
    
 }
-
+body > div > p {
+  padding: none;
+}
 html, body {
   margin: 0;
   padding: 0;
@@ -119,6 +121,7 @@ a {
   border: 5px var(--primary-black);
   border-collapse: collapse;
   width: 280px;
+  margin-bottom: 16px;
 }
 
 .table_border th{
