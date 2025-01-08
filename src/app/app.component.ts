@@ -12,6 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Firestore } from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { SignupComponent } from './signup/signup.component';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +33,7 @@ import { CommonModule } from '@angular/common';
     RouterModule,
     NgbModule,
     FormsModule,
-    
+    SignupComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

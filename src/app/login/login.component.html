@@ -1,7 +1,7 @@
 <div class="middle_content">
   <div class="login_form">
     <form (ngSubmit)="onSubmit()">
-      <h1>Sign up</h1>
+      <h1>Login</h1>
       <div class="input_box">
         <input
           type="text"
@@ -26,47 +26,12 @@
         <i class="bx bxs-lock-alt"></i>
       </div>
 
-      <div id="errorMessage" class="error_message">
-        <b>
-          <p
-            id="criteria"
-            [class.valid]="requirements.criteria"
-            [class.invalid]="!requirements.criteria"
-          >
-            Your password must fill these criteria:
-          </p>
-          <p
-            id="capital"
-            [class.valid]="requirements.capital"
-            [class.invalid]="!requirements.capital"
-          >
-            Two uppercase letters
-          </p>
-          <p
-            id="digit"
-            [class.valid]="requirements.digit"
-            [class.invalid]="!requirements.digit"
-          >
-            One digit
-          </p>
-          <p
-            id="special"
-            [class.valid]="requirements.special"
-            [class.invalid]="!requirements.special"
-          >
-            One special character
-          </p>
-          <p
-            id="length"
-            [class.valid]="requirements.length"
-            [class.invalid]="!requirements.length"
-          >
-            8 characters long
-          </p>
-        </b>
-      </div>
-      <button type="submit" class="button">Sign up!</button>
-
+      <button type="submit" class="button">Login!</button>
+      <p>Don't have an account yet?
+        <a routerLink="/signup" routerLinkActive="active">
+          <u>Sign up.</u>
+        </a>
+      </p>
       <p *ngIf="successMessage" class="success_message">{{ successMessage }}</p>
     </form>
   </div>

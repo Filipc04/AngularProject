@@ -4,13 +4,13 @@ import { NgIf, NgClass } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-signup',
   standalone: true,
-  imports: [FormsModule, NgIf, NgClass, RouterModule],
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  imports: [FormsModule, NgIf, RouterModule],
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css'],
 })
-export class LoginComponent {
+export class SignupComponent {
   username: string = '';
   password: string = '';
   requirements = {
