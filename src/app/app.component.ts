@@ -10,11 +10,14 @@ import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Firestore } from '@angular/fire/firestore';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    CommonModule,
     RouterOutlet,
     HomeComponent,
     AboutComponent,
@@ -27,7 +30,9 @@ import { Firestore } from '@angular/fire/firestore';
     LoginComponent,
     NavbarComponent,
     RouterModule,
-    NgbModule 
+    NgbModule,
+    FormsModule,
+    
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
