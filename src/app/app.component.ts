@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SignupComponent } from './signup/signup.component';
 import { CreatelistComponent } from './createlist/createlist.component';
+import { TypeaheadComponent } from './typeahead/typeahead.component';
 
 @Component({
   selector: 'app-root',
