@@ -1,0 +1,28 @@
+.carousel-wrapper {
+  width: 100%;
+  max-width: 900px; 
+  margin: 0 auto;
+  border: 5px solid var(--primary-white); 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  overflow: hidden;
+}
+
+.custom-carousel {
+  width: 100%;
+}
+
+.picsum-img-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; 
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+}

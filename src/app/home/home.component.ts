@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { SlideshowComponent } from '../slideshow/slideshow.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, RouterOutlet, NgbCarouselModule],
+  imports: [RouterLink, RouterLinkActive, RouterOutlet, SlideshowComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  images = ['demonslayer_slideshow.jpg', 'lain_slideshow.jpg', 'mobpsycho_slideshow.jpg'].map((filename) => `assets/${filename}`);
-
 }

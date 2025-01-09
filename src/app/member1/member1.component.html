@@ -88,60 +88,8 @@
       
       <h1 style='color: #d4be98'>My top 3 animes</h1>
 
-      <div ngbAccordion #accordion="ngbAccordion">
-        <div ngbAccordionItem="first">
-          <h2 ngbAccordionHeader>
-            <button ngbAccordionButton style="color: #d4be98; background-color: #282828;" class="accordion_header">Vinland Saga</button> <!-- Rubriktext --> <!-- Bakom rubriktext -->
-          </h2>
-          <div ngbAccordionCollapse style="background-color: #282828;"> <!-- Bakgrundsfärg bakom texten -->
-            <div ngbAccordionBody style="color: #d4be98;" class="accordion_text_width"> <!-- Textens färg -->
-              <ng-template>
-                What I really enjoyed about this anime was its raw, emotional storytelling and complex characters. 
-                It delves into themes like revenge, honor, and the search for meaning in a violent world. 
-                The historical Viking setting is beautifully realized, and the intense battles are balanced with thought-provoking philosophical moments that 
-                make you question the cycle of hatred. I really recommend this anime, you can watch it's trailer 
-                <b><a href="https://www.youtube.com/watch?v=f8JrZ7Q_p-8&ab_channel=Sentai" target="_blank">here.</a></b>
-              </ng-template>
-            </div>
-          </div>
-        </div>
-     
       
-        
-        <div ngbAccordionItem="second">
-          <h2 ngbAccordionHeader>
-            <button ngbAccordionButton style="color: #d4be98; background-color: #282828;" class="accordion-header">Mob Psycho 100</button>
-          </h2>
-          <div ngbAccordionCollapse style="background-color: #282828;">
-            <div ngbAccordionBody style="color: #d4be98;" class="accordion_text_width">
-              <ng-template>
-                What makes Mob Psycho 100 so special is its perfect balance of humor, heart, and mind-blowing action sequences. 
-                Mob is such an endearing protagonist—his struggle to become a better person despite his overwhelming psychic powers is both relatable and inspiring. 
-                The animation is wild and experimental, making every fight scene a visual spectacle. But beyond the flashy exterior, it’s the quiet moments of vulnerability and 
-                the genuine relationships between the characters that truly make it unforgettable. <b><a href="https://www.youtube.com/watch?v=nTze7vAdRpM&ab_channel=IGN" target="_blank">Trailer.</a></b>
-              </ng-template>
-            </div>
-          </div>
-        </div>
-
-        <div ngbAccordionItem="third">
-          <h2 ngbAccordionHeader>
-            <button ngbAccordionButton style="color: #d4be98; background-color: #282828;" class="accordion-header">Hunter x Hunter</button>
-          </h2>
-          <div ngbAccordionCollapse style="background-color: #282828;">
-            <div ngbAccordionBody style="color: #d4be98;" class="accordion_text_width">
-              <ng-template>
-                One of the things I loved most about Hunter x Hunter is how it constantly subverts expectations. 
-                What starts as a seemingly lighthearted adventure quickly evolves into a layered and morally complex story. 
-                The world-building is unparalleled, with each arc introducing unique settings, challenges, and characters. 
-                The dynamic between Gon and Killua is the heart of the series, and their growth, both individually and together, is beautifully portrayed. 
-                Whether it’s the intellectual depth of Nen or the emotional weight of its darker moments, this anime keeps you thinking long after it’s over. See the trailer <b><a href="https://www.youtube.com/watch?v=d6kBeJjTGnY&t=8s&ab_channel=vizmedia" target="_blank">here.</a></b>
-              </ng-template>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <app-accordion></app-accordion>
       
 
     </div>
