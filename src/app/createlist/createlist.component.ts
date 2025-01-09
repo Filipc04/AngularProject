@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-createlist',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './createlist.component.html',
   styleUrl: './createlist.component.css'
 })

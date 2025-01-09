@@ -1,14 +1,21 @@
 <header>
-  <button class="header_link toggle-navbar-btn" (click)="toggleNavbar()">
-    <img src="assets/menu_icon.svg" alt="menu_icon">
-    Menu</button>
+  <div class="header_links-container">
+    <button class="header_link toggle-navbar-btn" (click)="toggleNavbar()">
+      <img src="assets/menu_icon.svg" alt="menu_icon"> Menu
+    </button>
     <a routerLink="/index" routerLinkActive="active" class="header_link">
       <img src="assets/home_icon_white.svg" alt="home icon"> Home
     </a>
     <a routerLink="/about" routerLinkActive="active" class="header_link">
       <img src="assets/about_icon.svg" alt="about icon"> About
     </a>
+  </div>
+  <div class="login-links">
+    <a routerLink="/createlist" routerLinkActive="active" class="login_link">
+      <img src="assets/star_icon.svg" alt="rate icon"> Rate
+    </a>
     <a routerLink="/login" routerLinkActive="active" class="login_link">
       <img src="assets/login_icon.svg" alt="login icon"> Login
     </a>
-  </header>
+  </div>
+</header>

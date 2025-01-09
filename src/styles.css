@@ -102,9 +102,7 @@ a {
   color: black;
 }
 
-.header_link img{
-  height: 20px;
-}
+
 
 .about_div{
   text-align: center;
@@ -210,13 +208,6 @@ tr > td:last-child{
   text-align: center; 
 }
 
-.login_link{
-  margin-left: auto;
-}
-
-.login_link img{
-  height: 20px;
-}
 
 @media screen and (max-width: 768px) {
   .tables_with_image {
