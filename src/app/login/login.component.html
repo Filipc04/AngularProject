@@ -27,11 +27,11 @@
       </div>
 
       <button type="submit" class="button">Login!</button>
-      <p>Don't have an account yet?
+      <b><p class="account_check_text">Don't have an account yet?
         <a routerLink="/signup" routerLinkActive="active">
-          <u>Sign up.</u>
+          <b><u class="signup_text">Sign up.</u></b>
         </a>
-      </p>
+      </p></b>
       <p *ngIf="successMessage" class="success_message">{{ successMessage }}</p>
     </form>
   </div>

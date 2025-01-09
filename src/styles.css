@@ -300,12 +300,20 @@ tr > td:last-child{
   border: 2px solid rgba(255, 255, 255, .2);
   border-radius: 40px;
   font-size: 16px;
-  color: fff;
+  color: #1d2021;
   padding: 20px 45px 20px 20px;
 }
 
-.input_box input::placeholder{
-  color: fff;
+.input_box input::placeholder {
+  color: #d4be98;
+  opacity: 0.7; 
+}
+
+.input_box input:focus {
+  background: transparent; 
+  border-color: #d4be98; 
+  color: #d4be98; 
+  outline: none; 
 }
 
 .input_box i{
