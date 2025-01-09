@@ -96,7 +96,15 @@ const animes = [
   imports: [NgbTypeaheadModule, FormsModule, JsonPipe],
   templateUrl: './typeahead.component.html',
   styleUrl: './typeahead.component.css',
-  styles: `.form-control { width: 400px; }`,
+  styles: [
+    `.form-control { 
+        width: 400px;
+        background-color: #1d2021;
+        color: #d4be98; /* Ensure text is readable */
+        border: 1px solid #d4be98; /* Replace #4caf50 with your desired color */
+        border-radius: 4px; /* Optional: Adjusts the border radius */
+     }`,
+  ],
 })
 export class TypeaheadComponent {
   model: any;

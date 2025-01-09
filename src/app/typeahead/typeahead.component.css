@@ -1,0 +1,13 @@
+pre {
+  text-align: center;
+  margin: 0 auto; 
+  width: max-content; 
+}
+
+label {
+  display: block; 
+  text-align: center; 
+  margin: 0 auto; 
+  width: max-content; 
+  padding-bottom: 10px;
+}
