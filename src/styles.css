@@ -388,3 +388,7 @@ button[ngbAccordionButton][aria-expanded="true"]::after {
 .accordion_text_width{
   max-width: 600px;
 }
+
+img, svg {
+  vertical-align: baseline !important;
+}
