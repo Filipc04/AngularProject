@@ -13,6 +13,7 @@ import { Firestore } from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SignupComponent } from './signup/signup.component';
+import { CreatelistComponent } from './createlist/createlist.component';
 
 @Component({
   selector: 'app-root',
