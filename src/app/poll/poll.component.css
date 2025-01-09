@@ -1,0 +1,52 @@
+.poll {
+    background-color: #282828;
+    color: #d4be98;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  
+  li span {
+    flex-grow: 1;
+  }
+  
+  button {
+    margin: 0 5px;
+    padding: 8px 15px;
+    border: none;
+    background-color: #d4be98;
+    color: #282828;
+    cursor: pointer;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+  
+  button:disabled {
+    background-color: #a6a6a6;
+    cursor: not-allowed;
+  }
+  
+  p {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
