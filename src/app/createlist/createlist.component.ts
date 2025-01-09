@@ -9,7 +9,6 @@ import { TypeaheadComponent } from "../typeahead/typeahead.component";
   imports: [RouterModule, NgbRatingModule, TypeaheadComponent],
   templateUrl: './createlist.component.html',
   styleUrl: './createlist.component.css',
-   
 })
 export class CreatelistComponent {
   rating = 0;
