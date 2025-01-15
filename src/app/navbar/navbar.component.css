@@ -5,7 +5,7 @@
     height: calc(78vh - 78px - 100px);
     width: 250px;
     background-color: #333;
-    padding: 20px 0;
+    padding: 0px 0;
     color: white;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     transition: left 0.3s ease;
@@ -45,11 +45,11 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    height: 100%; /* Make it span the full navbar height */
+    height: 40%;
 
 }
 
   .navbar_image {
-    height: 30%;
+    height: 40%;
     border-radius: 5px;
   }
