@@ -7,13 +7,12 @@
   text-align: center;
   border-radius: 10px;
   padding: 30px 40px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, .2);
   backdrop-filter: blur(20px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
   margin: 40px;
 }
 
-/* Input styling */
 .signup_form .input_box {
   position: relative;
   width: 420px;
@@ -30,7 +29,7 @@
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
   font-size: 16px;
-  color: #1d2021;
+  color: #d4be98;
   padding: 20px 45px 20px 20px;
 }
 
@@ -39,11 +38,14 @@
   opacity: 0.7;
 }
 
+
 .input_box input:focus {
-  background: transparent;
-  border-color: #d4be98;
-  color: #d4be98;
-  outline: none;
+  background: transparent; 
+  border-color: #d4be98; 
+  color: #d4be98; 
+  outline: none; 
+ 
+  box-shadow: none; 
 }
 
 .input_box i {
@@ -54,7 +56,18 @@
   font-size: 20px;
 }
 
-/* Button styling */
+
+.input_box input:-webkit-autofill,
+.input_box input:-webkit-autofill:hover,
+.input_box input:-webkit-autofill:focus,
+.input_box input:-webkit-autofill:active {
+  background-color: transparent !important;
+  color: #d4be98 !important;
+  -webkit-text-fill-color: #d4be98 !important; 
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
 .signup_form .button {
   width: 400px;
   height: 45px;
@@ -67,16 +80,17 @@
   font-size: 16px;
   font-weight: bold;
   color: #333;
+  margin-top: 20px;
 }
 
-/* Success message styling */
+
 .success_message {
   color: #4caf50;
   font-size: 14px;
   margin-top: 16px;
 }
 
-/* Criteria and validation styling */
+
 .error_message p {
   margin: 5px 0;
   font-size: 14px;
