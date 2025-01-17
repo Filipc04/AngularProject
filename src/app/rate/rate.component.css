@@ -5,11 +5,9 @@
     padding-top: 50px;
     align-items: center; 
     background: #282828;
-    
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
     color: var(--primary-white);
     position: relative;
-    min-height: 85vh;
 }
 
 .rate_button {

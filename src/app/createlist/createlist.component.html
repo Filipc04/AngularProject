@@ -1,5 +1,17 @@
 <div class="middle_content">
-  <app-typeahead></app-typeahead>
-  <app-rate></app-rate>
-  
+  <app-typeahead (animeSelected)="onAnimeSelected($event)" [reset]="resetTypeahead"></app-typeahead>
+  <app-rate (ratingSelected)="onRatingSelected($event)" [reset]="resetRating"></app-rate>
+
+  <button class="rate_button" (click)="addAnimeToList()">Add to your anime list!</button>
+
+  <table class="user_table" *ngIf="animeList.length > 0">
+    <tr>
+      <th>Anime</th>
+      <th>Rating</th>
+    </tr>
+    <tr *ngFor="let anime of animeList">
+      <td>{{ anime.name }}</td>
+      <td>{{ anime.rating }}/10</td>
+    </tr>
+  </table>
 </div>
