@@ -1,10 +1,10 @@
 <div class="poll">
-    <h2>Vote for your wich anime I should watch next!</h2>
+    <h2>Vote for your which anime I should watch next!</h2>
     <ul>
       <li *ngFor="let option of pollOptions; let i = index">
         <span>{{ option.name }}</span>
         <button (click)="vote(i)" [disabled]="userVoted">Vote</button>
-        <span>Votes: {{ option.votes }}</span>
+        <p>Votes: {{ option.votes }}</p>
       </li>
     </ul>
     <p *ngIf="userVoted" style="color: green;">Thank you for voting!</p>
