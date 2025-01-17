@@ -13,8 +13,9 @@ import { Firestore } from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SignupComponent } from './signup/signup.component';
-import { CreatelistComponent } from './createlist/createlist.component';
+import { RateComponent } from './rate/rate.component';
 import { TypeaheadComponent } from './typeahead/typeahead.component';
+import { CreatelistComponent } from './createlist/createlist.component';
 
 @Component({
   selector: 'app-root',
@@ -35,7 +36,10 @@ import { TypeaheadComponent } from './typeahead/typeahead.component';
     RouterModule,
     NgbModule,
     FormsModule,
-    SignupComponent
+    SignupComponent,
+    RateComponent,
+    TypeaheadComponent,
+    CreatelistComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

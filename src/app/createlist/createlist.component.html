@@ -1,12 +1,17 @@
-  <div class="middle_content_createlist">
+<div class="createlist_middle_content">
+  <app-typeahead (animeSelected)="onAnimeSelected($event)" [reset]="resetTypeahead"></app-typeahead>
+  <app-rate (ratingSelected)="onRatingSelected($event)" [reset]="resetRating"></app-rate>
 
-    <app-typeahead></app-typeahead>
-    
-    <ngb-rating [(rate)]="rating" />
-   
-    <pre>Rate: <b>{{ rating }}</b>/10</pre>
+  <button class="rate_button" (click)="addRippleEffect($event); addAnimeToList()">Add to your anime list!</button>
 
-    <button class="createlist_button">Add to your anime list!</button>
-  </div>
-
-
+  <table class="user_table" *ngIf="animeList.length > 0">
+    <tr>
+      <th>Anime</th>
+      <th>Rating</th>
+    </tr>
+    <tr *ngFor="let anime of animeList">
+      <td>{{ anime.name }}</td>
+      <td>{{ anime.rating }}/10 <i class='bx bxs-star' style='color:#d0c722'></i></td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,7 @@
+.middle_content_rate{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+
