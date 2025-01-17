@@ -5,6 +5,7 @@ import { Member1Component } from './member1/member1.component';
 import { Member2Component } from './member2/member2.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { RateComponent } from './rate/rate.component';
 import { CreatelistComponent } from './createlist/createlist.component';
 
 export const routes: Routes = [
@@ -14,6 +15,6 @@ export const routes: Routes = [
     { path: 'member2', component: Member2Component },
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
-    { path: 'createlist', component: CreatelistComponent },
+    { path: 'createlist', component: CreatelistComponent},
     { path: '**', redirectTo: '' }, // Redirect unknown routes to home
   ];

@@ -1,10 +1,3 @@
-
-
-
 <label for="typeahead-basic">Search for the anime that you want to rate:</label>
-<input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" />
-
-<hr />
-<div  class="rate_text">
-  <pre style="align-content: center;">Rate {{ model | json }}</pre>
-</div>
+<input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model"
+  [ngbTypeahead]="search" (selectItem)="onSelect($event)" [popupClass]="'custom-typeahead-popup'" />
