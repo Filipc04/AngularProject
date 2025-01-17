@@ -11,11 +11,31 @@
     </a>
   </div>
   <div class="login-links">
-    <a routerLink="/createlist" routerLinkActive="active" class="login_link">
+    <!-- Always show 'Rate' link, but disable it if not logged in -->
+    <a
+      [routerLink]="authService.getLoginStatus() ? '/createlist' : '#'"
+      routerLinkActive="active"
+      class="login_link"
+      [class.disabled]="!authService.getLoginStatus()"
+    >
       <img src="assets/star_icon.svg" alt="rate icon"> Rate
     </a>
-    <a routerLink="/login" routerLinkActive="active" class="login_link">
+    <!-- Login link shows when not logged in -->
+    <a
+      *ngIf="!authService.getLoginStatus()"
+      routerLink="/login"
+      routerLinkActive="active"
+      class="login_link"
+    >
       <img src="assets/login_icon.svg" alt="login icon"> Login
+    </a>
+    <!-- Logout link shows when logged in -->
+    <a
+      *ngIf="authService.getLoginStatus()"
+      (click)="onLogout()"
+      class="login_link"
+    >
+      <img src="assets/login_icon.svg" alt="logout icon"> Logout
     </a>
   </div>
 </header>
