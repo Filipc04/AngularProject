@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgIf, NgClass } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { NgIf } from '@angular/common';
+import { Firestore, collection, addDoc } from '@angular/fire/firestore'; // Firebase imports
+import { Router } from '@angular/router'; // For navigation
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [FormsModule, NgIf, RouterModule],
+  imports: [FormsModule, NgIf],
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent {
   username: string = '';
+  email: string = '';
   password: string = '';
   requirements = {
     capital: false,
@@ -21,6 +23,8 @@ export class SignupComponent {
     criteria: false,
   };
   successMessage: string = '';
+
+  constructor(private firestore: Firestore, private router: Router) {}
 
   validatePassword(): void {
     const capital = /[A-Z]/g;
@@ -39,9 +43,9 @@ export class SignupComponent {
       this.requirements.length;
   }
 
-  onSubmit(): void {
-    if (!this.username || !this.password) {
-      alert('Ensure you input a value in both fields!');
+  async onSubmit(): Promise<void> {
+    if (!this.username || !this.email || !this.password) {
+      alert('Please fill out all fields!');
       return;
     }
 
@@ -50,17 +54,38 @@ export class SignupComponent {
       return;
     }
 
-    this.successMessage = 'You are now signed up and logged in!';
-    setTimeout(() => {
-      this.successMessage = '';
-      window.location.href = 'index.html'; 
-    }, 1500);
+    try {
+      // Reference to the Firestore collection
+      const usersCollection = collection(this.firestore, 'users');
 
-    console.log(
-      `New member has a username of ${this.username} and password of ${this.password}`
-    );
+      // Add the user's signup data to Firestore
+      await addDoc(usersCollection, {
+        username: this.username,
+        email: this.email,
+        password: this.password, // Avoid storing plain-text passwords in production
+        timestamp: new Date(),
+      });
 
-    this.username = '';
-    this.password = '';
+      this.successMessage = 'You have successfully signed up!';
+      console.log('User added to Firestore:', {
+        username: this.username,
+        email: this.email,
+        password: this.password,
+      });
+
+      // Clear the form fields
+      this.username = '';
+      this.email = '';
+      this.password = '';
+
+      // Redirect after success
+      setTimeout(() => {
+        this.successMessage = '';
+        this.router.navigate(['/']); // Adjust the route to your home page
+      }, 1500);
+    } catch (error) {
+      console.error('Error adding user to Firestore:', error);
+      alert('An error occurred while signing up. Please try again.');
+    }
   }
 }

@@ -26,6 +26,15 @@
   li span {
     flex-grow: 1;
   }
+
+  h2 {
+    background-color: #1d2021;
+    padding: 8px 15px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
   
   button {
     margin: 0 5px;

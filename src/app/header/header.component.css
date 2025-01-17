@@ -17,6 +17,7 @@ header {
 .login-links {
   display: flex;
   gap: 15px; /* Space between createlist and login links */
+  cursor: pointer;
 }
 
 .header_link, .login_link {
@@ -74,4 +75,13 @@ header {
 
 .toggle-navbar-btn:hover::after {
   transform: scaleX(1);
+}
+
+.disabled {
+  color: gray;
+  pointer-events: none; /* Disable clicking */
+}
+
+.disabled img {
+  opacity: 0.5; /* Make the icon appear disabled */
 }

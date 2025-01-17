@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgIf, NgClass } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../auth.service';  // Ensure this path is correct
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, NgIf, NgClass, RouterModule],
+  imports: [FormsModule, NgIf, NgClass, RouterModule],  // Required imports
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
@@ -21,6 +22,8 @@ export class LoginComponent {
     criteria: false,
   };
   successMessage: string = '';
+
+  constructor(@Inject(AuthService) private authService: AuthService) {}  // Use @Inject here
 
   validatePassword(): void {
     const capital = /[A-Z]/g;
@@ -50,16 +53,15 @@ export class LoginComponent {
       return;
     }
 
+    this.authService.login();  // Call login method from AuthService
     this.successMessage = 'You are now signed up and logged in!';
+
     setTimeout(() => {
       this.successMessage = '';
-      window.location.href = 'index.html'; 
+      // Optionally redirect or update UI to show logged-in state
     }, 1500);
 
-    console.log(
-      `New member has a username of ${this.username} and password of ${this.password}`
-    );
-
+    console.log(`New member has a username of ${this.username}`);
     this.username = '';
     this.password = '';
   }

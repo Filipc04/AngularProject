@@ -1,0 +1,93 @@
+/* General form styling */
+.signup_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 420px;
+    background: transparent;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px 40px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 40px;
+  }
+  
+  /* Input styling */
+  .signup_form .input_box {
+    position: relative;
+    width: 420px;
+    height: 50px;
+    margin: 30px 0;
+    padding: 0 10px;
+  }
+  
+  .input_box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #1d2021;
+    padding: 20px 45px 20px 20px;
+  }
+  
+  .input_box input::placeholder {
+    color: #d4be98;
+    opacity: 0.7;
+  }
+  
+  .input_box input:focus {
+    background: transparent;
+    border-color: #d4be98;
+    color: #d4be98;
+    outline: none;
+  }
+  
+  .input_box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+  }
+  
+  /* Button styling */
+  .signup_form .button {
+    width: 400px;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Success message styling */
+  .success_message {
+    color: #4caf50;
+    font-size: 14px;
+    margin-top: 16px;
+  }
+  
+  /* Criteria and validation styling */
+  .error_message p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .error_message p.valid {
+    color: #4caf50;
+  }
+  
+  .error_message p.invalid {
+    color: #f08080;
+  }
+  
