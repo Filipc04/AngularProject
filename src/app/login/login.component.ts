@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgIf, NgClass } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';  // Import Router for navigation
 import { AuthService } from '../auth.service';  // Ensure this path is correct
 
 @Component({
@@ -23,7 +23,7 @@ export class LoginComponent {
   };
   successMessage: string = '';
 
-  constructor(@Inject(AuthService) private authService: AuthService) {}  // Use @Inject here
+  constructor(@Inject(AuthService) private authService: AuthService, private router: Router) {}  // Use @Inject and inject Router
 
   validatePassword(): void {
     const capital = /[A-Z]/g;
@@ -54,14 +54,15 @@ export class LoginComponent {
     }
 
     this.authService.login();  // Call login method from AuthService
-    this.successMessage = 'You are now signed up and logged in!';
+    this.successMessage = 'You are now logged in!';
 
     setTimeout(() => {
       this.successMessage = '';
-      // Optionally redirect or update UI to show logged-in state
+      // Redirect to homepage after login
+      this.router.navigate(['/']);  // Redirect to homepage
     }, 1500);
 
-    console.log(`New member has a username of ${this.username}`);
+    console.log(`Logged in with username: ${this.username}`);
     this.username = '';
     this.password = '';
   }

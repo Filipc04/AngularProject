@@ -1,10 +1,10 @@
 .carousel-wrapper {
   width: 100%;
-  max-width: 900px; 
+  max-width: 900px; /* Adjust max width as needed */
   margin: 0 auto;
-  border: 5px solid var(--primary-white); 
-  border-radius: 10px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  border: 5px solid #f08080;; /* Static border around the entire carousel */
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow:  0 0 5px #f08080;
   overflow: hidden;
 }
 

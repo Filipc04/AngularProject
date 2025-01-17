@@ -16,7 +16,8 @@
       [routerLink]="authService.getLoginStatus() ? '/createlist' : '#'"
       routerLinkActive="active"
       class="login_link"
-      [class.disabled]="!authService.getLoginStatus()"
+      
+      (click)="authService.getLoginStatus() ? null : showToast()"
     >
       <img src="assets/star_icon.svg" alt="rate icon"> Rate
     </a>
@@ -39,3 +40,6 @@
     </a>
   </div>
 </header>
+
+<!-- Toast notification (same as before) -->
+<div #toast class="toast">You are not logged in!</div>
