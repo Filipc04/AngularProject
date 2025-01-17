@@ -33,14 +33,14 @@ export class TypeaheadComponent implements OnChanges {
     );
 
   onSelect(event: any) {
-    const selectedAnime = event.item; // ✅ Ensure full name is used
-    this.model = selectedAnime; // ✅ Set the correct value
-    this.animeSelected.emit(this.model); // ✅ Emit the correct value
+    const selectedAnime = event.item; 
+    this.model = selectedAnime; 
+    this.animeSelected.emit(this.model); 
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['reset'] && this.reset) {
-      this.model = ''; // ✅ Reset input field when necessary
+      this.model = ''; 
     }
   }
 }

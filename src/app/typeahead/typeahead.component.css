@@ -1,13 +1,43 @@
-pre {
-  text-align: center;
-  margin: 0 auto; 
-  width: max-content; 
-}
 
 label {
-  display: block; 
-  text-align: center; 
-  margin: 0 auto; 
-  width: max-content; 
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  width: max-content;
   padding-bottom: 10px;
+  font-size: 25px;
+  color: #d4be98;
+  font-weight: bold;
 }
+
+
+input.form-control {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #1d2021;
+  border: 2px solid #aa987a;
+  color: #d4be98;
+  border-radius: 5px;
+}
+
+
+input.form-control:focus {
+  outline: none;
+  border-color: #f08080;
+  box-shadow: 0 0 5px #f08080;
+}
+
+
+
+
+pre {
+  text-align: center;
+  margin: 0 auto;
+  width: max-content;
+  color: #aa987a;
+}
+

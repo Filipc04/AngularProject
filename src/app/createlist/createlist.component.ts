@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RateComponent } from "../rate/rate.component";
 import { TypeaheadComponent } from "../typeahead/typeahead.component";
+import { ButtonFx } from './buttonfx';
 
 @Component({
   selector: 'app-createlist',
@@ -44,5 +45,9 @@ export class CreatelistComponent {
         this.resetRating = false;
       }, 10);
     }
+  }
+
+  addRippleEffect(event: MouseEvent): void {
+    ButtonFx.addRippleEffect(event);  // Call the method from ButtonFx class
   }
 }
