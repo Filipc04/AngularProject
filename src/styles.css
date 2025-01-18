@@ -260,6 +260,10 @@ tr > td:last-child{
   }
 }
 
+.headline_memberpages{
+  margin: 30px;
+}
+
 .invalid {
   color: #f08080;
 }
