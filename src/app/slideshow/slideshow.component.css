@@ -4,7 +4,7 @@
   margin: 0 auto;
   border: 5px solid #f08080;; /* Static border around the entire carousel */
   border-radius: 10px; /* Optional: Rounded corners */
-  box-shadow:  0 0 5px #f08080;
+  box-shadow:  0 0 15px #f08080;
   overflow: hidden;
 }
 
@@ -20,9 +20,9 @@
 }
 
 .carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.9); 
   padding: 10px;
   border-radius: 5px;
-  color: #fff;
+  color: #aa987a;
   text-align: center;
 }

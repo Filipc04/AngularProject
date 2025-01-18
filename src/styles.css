@@ -67,6 +67,10 @@ header, footer{
   position: relative;
   color: var(--primary-white);
 }
+.team-members a:hover{
+ 
+  color:#f08080;
+}
 
 .team-members a::after{
   content: '';
@@ -75,7 +79,7 @@ header, footer{
   bottom: -5px;
   width: 100%;
   height: 2px;
-  background-color: var(--primary-white);
+  background-color:#f08080;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
