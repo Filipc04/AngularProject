@@ -13,36 +13,19 @@
       <img src="assets/trophy_icon.png" alt="trophy icon"> Top Animes
     </a>
   </div>
+
+  @if (authService.currentUserSig() == null) {
   <div class="login-links">
-    <!-- Always show 'Rate' link, but disable it if not logged in -->
-    <a
-      [routerLink]="authService.getLoginStatus() ? '/createlist' : '#'"
-      routerLinkActive="active"
-      class="login_link"
-      
-      (click)="authService.getLoginStatus() ? null : showToast()"
-    >
-      <img src="assets/star_icon.svg" alt="rate icon"> Rate
-    </a>
-    <!-- Login link shows when not logged in -->
-    <a
-      *ngIf="!authService.getLoginStatus()"
-      routerLink="/login"
-      routerLinkActive="active"
-      class="login_link"
-    >
+    <a routerLink="/login" routerLinkActive="active" class="login_link">
       <img src="assets/login_icon.svg" alt="login icon"> Login
     </a>
-    <!-- Logout link shows when logged in -->
-    <a
-      *ngIf="authService.getLoginStatus()"
-      (click)="onLogout()"
-      class="login_link"
-    >
-      <img src="assets/login_icon.svg" alt="logout icon"> Logout
-    </a>
   </div>
+}
+@if (authService.currentUserSig()) {
+  <div class="login-links">
+    <div (click)="logout()" class="login_link">
+      Log out
+    </div>
+  </div>
+}
 </header>
-
-<!-- Toast notification (same as before) -->
-<div #toast class="toast">You are not logged in!</div>

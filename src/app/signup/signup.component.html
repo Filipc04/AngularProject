@@ -1,83 +1,27 @@
 <div class="middle_content">
   <div class="signup_form">
-    <form (ngSubmit)="onSubmit()">
-      <h1>Sign up</h1>
-      <div class="input_box">
-        <input
-          type="text"
-          [(ngModel)]="username"
-          name="username"
-          class="form-control"
-          placeholder="Enter your username..."
-          required
-        />
-        <i class="bx bxs-user"></i>
-      </div>
-      <div class="input_box">
-        <input
-          type="email"
-          [(ngModel)]="email"
-          name="email"
-          class="form-control"
-          placeholder="Enter your email..."
-          required
-        />
-        <i class="bx bxs-envelope"></i>
-      </div>
-      <div class="input_box">
-        <input
-          type="password"
-          [(ngModel)]="password"
-          name="password"
-          class="form-control"
-          placeholder="Enter your password..."
-          required
-          (input)="validatePassword()"
-        />
-        <i class="bx bxs-lock-alt"></i>
-      </div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<h1>Sign up</h1>
 
-      <div id="errorMessage" class="error_message">
-        <b>
-          <p
-            id="criteria"
-            [class.valid]="requirements.criteria"
-            [class.invalid]="!requirements.criteria"
-          >
-            Your password must meet these criteria:
-          </p>
-          <p
-            id="capital"
-            [class.valid]="requirements.capital"
-            [class.invalid]="!requirements.capital"
-          >
-            At least two uppercase letters
-          </p>
-          <p
-            id="digit"
-            [class.valid]="requirements.digit"
-            [class.invalid]="!requirements.digit"
-          >
-            At least one digit
-          </p>
-          <p
-            id="special"
-            [class.valid]="requirements.special"
-            [class.invalid]="!requirements.special"
-          >
-            At least one special character
-          </p>
-          <p
-            id="length"
-            [class.valid]="requirements.length"
-            [class.invalid]="!requirements.length"
-          >
-            At least 8 characters long
-          </p>
-        </b>
-      </div>
-      <button type="submit" class="button">Sign up!</button>
-      <p *ngIf="successMessage" class="success_message">{{ successMessage }}</p>
-    </form>
-  </div>
+<div *ngIf="errorMessage">
+  <div>{{ errorMessage }}</div>
 </div>
+
+  <div class="input_box">
+    <input type="text" placeholder="Username" formControlName="username" />
+  </div>
+  <div class="input_box">
+    <input type="text" placeholder="Email" formControlName="email" />
+  </div>
+  <div class="input_box">
+    <input type="password" placeholder="Password" formControlName="password" />
+    <div *ngIf="form.controls['password'].invalid && form.controls['password'].touched">
+      <div *ngIf="form.controls['password'].hasError('required')">Password is required</div>
+      <div *ngIf="form.controls['password'].hasError('minlength')">Password must be at least 8 characters long</div>
+      <div *ngIf="form.controls['password'].hasError('pattern')">Password must meet the complexity requirements</div>
+    </div>
+  </div>
+  <div>
+    <button type="submit" class="button">Sign Up</button>
+  </div>
+</form>
