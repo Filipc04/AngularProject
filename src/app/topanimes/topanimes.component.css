@@ -1,28 +1,32 @@
-/* Styling for the top-anime-container */
 .top-anime-container {
-  width: 95%; /* Increase the width of the container */
-  max-width: 1200px; /* Set a max width to prevent it from becoming too large */
+  width: 95%; 
+  max-width: 1200px; 
   margin: 0 auto;
   background-color: #1d2021;
-  padding: 40px; /* Increase padding to make the content more spacious */
+  padding: 40px; 
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Larger shadow for more emphasis */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); 
   text-align: center;
 }
 
-/* Table and sidebar container styling */
+
 .table-container {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
 
-/* Table styling */
+h2{
+  color:#f08080;
+  margin-bottom: 40px;
+}
+
+
 .table-wrapper {
   width: 100%;
   overflow-x: auto;
   display: inline-block;
-  margin-top: 20px; /* Optional margin for spacing */
+  margin-top: 20px; 
 }
 
 table {
