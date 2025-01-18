@@ -1,6 +1,7 @@
 @if (images) {
   <div class="carousel-wrapper">
     <ngb-carousel class="custom-carousel">
+      
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
           <img [src]="images[0]" alt="Random first slide" />
@@ -10,15 +11,17 @@
           <p>Also called Demon Slayer. Picture shows (from left to right) Zenitzu, Inosuke, Tanjiro, Nezuko and the Wind Hashira.</p>
         </div>
       </ng-template>
+      
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
           <img [src]="images[1]" alt="Random second slide" />
         </div>
         <div class="carousel-caption">
-          <h3>Serial Experiments Lain</h3>
-          <p>Lain Iwakura. The show ran from July 6, 1998 - Sept 29, 1998.</p>
+          <h3>Attack On Titan</h3>
+          <p>Follows main character Eren and his battle for freedom. The show ran from 2013-2024.</p>
         </div>
       </ng-template>
+      
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
           <img [src]="images[2]" alt="Random third slide" />
@@ -28,6 +31,47 @@
           <p>Shows (from left to right) master Arataka Reigen and Mob/Shigeo Kageyama.</p>
         </div>
       </ng-template>
+      
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[3]" alt="Random fourth slide" />
+        </div>
+        <div class="carousel-caption">
+          <h3>Hunter x Hunter</h3>
+          <p>HxH as it is also called, is about Gon and Killua's adventures. The series ran for three years during 2011-2014.</p>
+        </div>
+      </ng-template>
+      
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[4]" alt="Random fifth slide" />
+        </div>
+        <div class="carousel-caption">
+          <h3>Serial Experiments Lain</h3>
+          <p>Lain Iwakura. The show ran from July 6, 1998 - Sept 29, 1998.</p>
+        </div>
+      </ng-template>
+      
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[5]" alt="Random sixth slide" />
+        </div>
+        <div class="carousel-caption">
+          <h3>Vinland Saga</h3>
+          <p>A story about Thorfinn, who seeks to avenge his fathers death in the Viking era.</p>
+        </div>
+      </ng-template>
+      
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[6]" alt="Random seventh slide" />
+        </div>
+        <div class="carousel-caption">
+          <h3>Neon Genesis Evangelion</h3>
+          <p>Abbeeee!!</p>
+        </div>
+      </ng-template>
+    
     </ngb-carousel>
   </div>
 }

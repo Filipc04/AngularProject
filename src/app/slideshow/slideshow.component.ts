@@ -10,8 +10,13 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrl: './slideshow.component.css'
 })
 export class SlideshowComponent {
-  images = ['demonslayer_slideshow.jpg', 'lain_slideshow.jpg', 'mobpsycho_slideshow.jpg'].map((filename) => `assets/${filename}`);
+  images = [
+    'demonslayer_slideshow.jpg',
+    'attackontitan_slideshow',
+    'mobpsycho_slideshow.jpg',
+    'hxh_slideshow.png',
+    'lain_slideshow.jpg',
+    'vinlandsaga_slideshow.jpg',
+    'evangelion_slideshow.jpg'
+  ].map((filename) => `assets/${filename}`);
 }
-
-
-
