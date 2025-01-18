@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 import { RateComponent } from "../rate/rate.component";
 import { TypeaheadComponent } from "../typeahead/typeahead.component";
 import { ButtonFx } from './buttonfx';
@@ -15,9 +16,11 @@ export class CreatelistComponent {
   animeList: { name: string; rating: number }[] = [];
   selectedAnime: string = '';
   selectedRating: number = 0;
+  
+  resetTypeahead: boolean = false;
+  resetRating: boolean = false;
 
-  resetTypeahead: boolean = false; // To reset typeahead input
-  resetRating: boolean = false; // To reset rating input
+  private firestore: Firestore = inject(Firestore); // Inject Firestore
 
   onAnimeSelected(anime: string) {
     this.selectedAnime = anime;
@@ -27,19 +30,26 @@ export class CreatelistComponent {
     this.selectedRating = rating;
   }
 
-  addAnimeToList() {
+  async addAnimeToList() {
     if (this.selectedAnime && this.selectedRating) {
       this.animeList = [...this.animeList, { name: this.selectedAnime, rating: this.selectedRating }];
       
+      // Store in Firestore
+      const listsRef = collection(this.firestore, 'lists');
+      await addDoc(listsRef, {
+        username: 'testUser', // Replace with actual user ID if authentication is implemented
+        animeName: this.selectedAnime,
+        rating: this.selectedRating,
+        timestamp: new Date()
+      });
+
       // Reset inputs
       this.selectedAnime = '';
       this.selectedRating = 0;
-      
-      // Notify child components to reset
       this.resetTypeahead = true;
       this.resetRating = true;
-      
-      // Immediately turn off the reset flags to allow new selections
+
+      // Reset flags after a delay
       setTimeout(() => {
         this.resetTypeahead = false;
         this.resetRating = false;
@@ -48,6 +58,6 @@ export class CreatelistComponent {
   }
 
   addRippleEffect(event: MouseEvent): void {
-    ButtonFx.addRippleEffect(event);  // Call the method from ButtonFx class
+    ButtonFx.addRippleEffect(event);
   }
 }
