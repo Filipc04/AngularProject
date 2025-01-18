@@ -20,14 +20,15 @@ export class HeaderComponent {
     this.toggleNavbarEvent.emit();
   }
 
-  onLogout(): void {
-    this.authService.logout(); // logout the user
-  }
-
   showToast() {
     this.renderer.addClass(this.toast.nativeElement, 'show');
     setTimeout(() => {
       this.renderer.removeClass(this.toast.nativeElement, 'show');
     }, 3000);
+  }
+  logout(): void {
+    this.authService.logout().subscribe(() => {
+      console.log('User logged out');
+    });
   }
 }

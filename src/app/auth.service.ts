@@ -1,23 +1,31 @@
-// src/app/auth.service.ts
-import { Injectable } from '@angular/core';
+import { Injectable, inject, signal } from "@angular/core";
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, user } from "@angular/fire/auth";
+import { from, Observable } from "rxjs";
+import { UserInterface } from "./user.interface";
+import { signOut } from "firebase/auth";
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root'
 })
 export class AuthService {
-  private isLoggedIn: boolean = false;
+    firebaseAuth = inject(Auth)
+    user$ = user(this.firebaseAuth)
+    currentUserSig = signal<UserInterface | null | undefined>(undefined)
 
-  constructor() {}
+    register(email: string, username: string, password: string): Observable<void> {
+        const promise = createUserWithEmailAndPassword(this.firebaseAuth, email, password,
 
-  login(): void {
-    this.isLoggedIn = true;
-  }
+        ).then(response => updateProfile(response.user, {displayName: username}))
+        return from(promise);
+    }
 
-  logout(): void {
-    this.isLoggedIn = false;
-  }
+    login(email: string, password: string): Observable<void> {
+        const promise = signInWithEmailAndPassword(this.firebaseAuth, email, password,).then(() => {});
+        return from(promise);
+    }
 
-  getLoginStatus(): boolean {
-    return this.isLoggedIn;
-  }
+    logout(): Observable<void> {
+      const promise = signOut(this.firebaseAuth)
+      return from(promise);
+    }
 }
