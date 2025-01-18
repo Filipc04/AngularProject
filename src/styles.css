@@ -10,7 +10,7 @@
 body > div > p {
   padding: none;
 }
-html, body {
+html, app-root, body {
   margin: 0;
   padding: 0;
   background-color: var(--primary-gray);
@@ -258,6 +258,10 @@ tr > td:last-child{
     text-align: center;
     padding-left: 20px;
   }
+}
+
+.headline_memberpages{
+  margin: 30px;
 }
 
 .invalid {

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, Inject } from '@angular/core';
+import { Component, EventEmitter, Output, Inject, ElementRef, ViewChild, Renderer2 } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { AuthService } from '../auth.service'; // import the service
 import { CommonModule } from '@angular/common';
@@ -12,8 +12,9 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
   @Output() toggleNavbarEvent = new EventEmitter<void>();
+  @ViewChild('toast', { static: false }) toast!: ElementRef;
 
-  constructor(@Inject(AuthService) public authService: AuthService) {} // use @Inject here
+  constructor(@Inject(AuthService) public authService: AuthService, private renderer: Renderer2) {}
 
   toggleNavbar(): void {
     this.toggleNavbarEvent.emit();
@@ -21,5 +22,12 @@ export class HeaderComponent {
 
   onLogout(): void {
     this.authService.logout(); // logout the user
+  }
+
+  showToast() {
+    this.renderer.addClass(this.toast.nativeElement, 'show');
+    setTimeout(() => {
+      this.renderer.removeClass(this.toast.nativeElement, 'show');
+    }, 3000);
   }
 }

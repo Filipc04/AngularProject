@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { RateComponent } from './rate/rate.component';
 import { CreatelistComponent } from './createlist/createlist.component';
+import { TopanimesComponent } from './topanimes/topanimes.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent }, // Default route (home page)
@@ -16,5 +17,6 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'createlist', component: CreatelistComponent},
+    { path: 'topanimes', component: TopanimesComponent},
     { path: '**', redirectTo: '' }, // Redirect unknown routes to home
   ];

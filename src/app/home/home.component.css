@@ -6,17 +6,6 @@
   padding: 20px;
 }
 
-/* Add the border and styling to the wrapper */
-.carousel-wrapper {
-  width: 100%;
-  max-width: 900px; /* Adjust max width as needed */
-  margin: 0 auto;
-  border: 5px solid var(--primary-white); /* Static border around the entire carousel */
-  border-radius: 10px; /* Optional: Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  overflow: hidden;
-}
-
 .custom-carousel {
   width: 100%;
 }

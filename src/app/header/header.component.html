@@ -9,6 +9,9 @@
     <a routerLink="/about" routerLinkActive="active" class="header_link">
       <img src="assets/about_icon.svg" alt="about icon"> About
     </a>
+    <a routerLink="/topanimes" routerLinkActive="active" class="header_link">
+      <img src="assets/trophy_icon.png" alt="trophy icon"> Top Animes
+    </a>
   </div>
   <div class="login-links">
     <!-- Always show 'Rate' link, but disable it if not logged in -->
@@ -16,7 +19,8 @@
       [routerLink]="authService.getLoginStatus() ? '/createlist' : '#'"
       routerLinkActive="active"
       class="login_link"
-      [class.disabled]="!authService.getLoginStatus()"
+      
+      (click)="authService.getLoginStatus() ? null : showToast()"
     >
       <img src="assets/star_icon.svg" alt="rate icon"> Rate
     </a>
@@ -39,3 +43,6 @@
     </a>
   </div>
 </header>
+
+<!-- Toast notification (same as before) -->
+<div #toast class="toast">You are not logged in!</div>

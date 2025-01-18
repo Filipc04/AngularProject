@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Firestore, collection, addDoc, doc, getDoc, setDoc, updateDoc } from '@angular/fire/firestore';
 import { RateComponent } from "../rate/rate.component";
 import { TypeaheadComponent } from "../typeahead/typeahead.component";
 import { ButtonFx } from './buttonfx';
@@ -15,9 +16,11 @@ export class CreatelistComponent {
   animeList: { name: string; rating: number }[] = [];
   selectedAnime: string = '';
   selectedRating: number = 0;
+  
+  resetTypeahead: boolean = false;
+  resetRating: boolean = false;
 
-  resetTypeahead: boolean = false; // To reset typeahead input
-  resetRating: boolean = false; // To reset rating input
+  private firestore: Firestore = inject(Firestore); // Inject Firestore
 
   onAnimeSelected(anime: string) {
     this.selectedAnime = anime;
@@ -27,19 +30,35 @@ export class CreatelistComponent {
     this.selectedRating = rating;
   }
 
-  addAnimeToList() {
+  async addAnimeToList() {
     if (this.selectedAnime && this.selectedRating) {
       this.animeList = [...this.animeList, { name: this.selectedAnime, rating: this.selectedRating }];
-      
+
+      try {
+        const animeRef = doc(this.firestore, `anime_ratings/${this.selectedAnime}`);
+        const animeSnapshot = await getDoc(animeRef);
+
+        if (animeSnapshot.exists()) {
+          // If anime exists, update its rating
+          const animeData = animeSnapshot.data() as { totalRating: number; voteCount: number };
+          const updatedTotal = animeData.totalRating + this.selectedRating;
+          const updatedCount = animeData.voteCount + 1;
+          await updateDoc(animeRef, { totalRating: updatedTotal, voteCount: updatedCount });
+        } else {
+          // If anime doesn't exist, create a new entry
+          await setDoc(animeRef, { totalRating: this.selectedRating, voteCount: 1 });
+        }
+
+      } catch (error) {
+        console.error('Error updating anime rating:', error);
+      }
+
       // Reset inputs
       this.selectedAnime = '';
       this.selectedRating = 0;
-      
-      // Notify child components to reset
       this.resetTypeahead = true;
       this.resetRating = true;
-      
-      // Immediately turn off the reset flags to allow new selections
+
       setTimeout(() => {
         this.resetTypeahead = false;
         this.resetRating = false;
@@ -48,6 +67,6 @@ export class CreatelistComponent {
   }
 
   addRippleEffect(event: MouseEvent): void {
-    ButtonFx.addRippleEffect(event);  // Call the method from ButtonFx class
+    ButtonFx.addRippleEffect(event);
   }
 }
