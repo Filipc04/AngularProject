@@ -21,7 +21,8 @@ export class TopanimesComponent {
       const data = doc.data() as { totalRating: number; voteCount: number };
       return {
         name: doc.id,
-        averageRating: data.voteCount > 0 ? (data.totalRating / data.voteCount) : 0
+        // Rounding the average rating to two decimal places
+        averageRating: data.voteCount > 0 ? Number((data.totalRating / data.voteCount).toFixed(2)) : 0
       };
     });
 

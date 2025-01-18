@@ -10,7 +10,7 @@
       <tr *ngFor="let anime of topAnimeList; let i = index">
         <td>{{ i + 1 }}</td> <!-- Position is based on the index of the array (1-based index) -->
         <td>{{ anime.name }}</td>
-        <td>{{ anime.averageRating.toFixed(1) }}/10 ⭐</td>
+        <td>{{ anime.averageRating }}/10 ⭐</td>
       </tr>
     </table>
     <p *ngIf="topAnimeList.length === 0">No ratings yet.</p>
