@@ -22,7 +22,7 @@ export class TopanimesComponent {
       return {
         name: doc.id,
         // Rounding the average rating to two decimal places
-        averageRating: data.voteCount > 0 ? Number((data.totalRating / data.voteCount).toFixed(2)) : 0
+        averageRating: data.voteCount > 0 ? Number((data.totalRating / data.voteCount).toFixed(1)) : 0
       };
     });
 
