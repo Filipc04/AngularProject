@@ -1,7 +1,7 @@
 .side-nav {
     position: absolute;
     top: 78px; /*temporary, annars 0, bara för att se hur det ser ut utan overlap*/
-    left: 0;
+    left: -250px;
     height: calc(78vh - 78px - 100px);
     width: 250px;
     background-color: #333;
@@ -52,4 +52,9 @@
   .navbar_image {
     height: 40%;
     border-radius: 5px;
+  }
+
+  .disabled {
+    color: gray !important;
+    pointer-events: none; /* Disable clicking */
   }

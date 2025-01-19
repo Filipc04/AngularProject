@@ -1,12 +1,25 @@
 <div class="poll">
-    <h2>Vote for your which anime I should watch next!</h2>
-    <ul>
-      <li *ngFor="let option of pollOptions; let i = index">
-        <span>{{ option.name }}</span>
-        <button (click)="vote(i)" [disabled]="userVoted">Vote</button>
-        <p>Votes: {{ option.votes }}</p>
-      </li>
-    </ul>
-    <p *ngIf="userVoted" style="color: green;">Thank you for voting!</p>
-  </div>
-  
+  <h2 *ngIf="isLoggedIn; else loginMessage">
+    Vote for which anime I should watch next!
+  </h2>
+  <ng-template #loginMessage>
+    <h2>Sign in to vote for which anime I should watch next!</h2>
+  </ng-template>
+
+  <ul>
+    <li *ngFor="let option of pollOptions; let i = index">
+      <span>{{ option.name }}</span>
+      <!-- Gray out the button and disable it if the user is not logged in -->
+      <button 
+        (click)="vote(i)" 
+        [disabled]="!isLoggedIn || userVoted" 
+        [ngClass]="{'disabled-button': !isLoggedIn || userVoted}">
+        Vote
+      </button>
+      <p>Votes: {{ option.votes }}</p>
+    </li>
+  </ul>
+
+  <!-- Display a thank-you message if the user has already voted -->
+  <p *ngIf="userVoted" style="color: green;">Thank you for voting!</p>
+</div>
