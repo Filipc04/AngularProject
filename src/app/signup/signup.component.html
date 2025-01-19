@@ -9,12 +9,15 @@
 
   <div class="input_box">
     <input type="text" placeholder="Username" formControlName="username" />
+    <i class="bx bxs-user"></i>
   </div>
   <div class="input_box">
     <input type="text" placeholder="Email" formControlName="email" />
+    <i class="bx bxs-envelope"></i>
   </div>
   <div class="input_box">
     <input type="password" placeholder="Password" formControlName="password" />
+    <i class="bx bxs-lock-alt"></i>
     <div *ngIf="form.controls['password'].invalid && form.controls['password'].touched">
       <div *ngIf="form.controls['password'].hasError('required')">Password is required</div>
       <div *ngIf="form.controls['password'].hasError('minlength')">Password must be at least 8 characters long</div>
