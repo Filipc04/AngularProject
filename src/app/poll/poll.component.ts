@@ -21,6 +21,7 @@ export class PollComponent {
     { name: 'Option 3', votes: 0 }
   ];
   userVoted = false;
+  votedOptionIndex: number | null = null; // Track which option the user voted for
 
   get isLoggedIn(): boolean {
     return this.authService.currentUserSig() !== null; // Adjust to match your AuthService logic
@@ -43,11 +44,44 @@ export class PollComponent {
 
         this.pollOptions[optionIndex].votes += 1;
         this.userVoted = true;
+        this.votedOptionIndex = optionIndex; // Save the voted option index
       } else {
         console.error('Poll not found in Firestore.');
       }
     } catch (error) {
       console.error('Error while voting:', error);
+    }
+  }
+
+  async retractVote() {
+    if (!this.userVoted || this.votedOptionIndex === null) {
+      alert('You have not voted yet!');
+      return;
+    }
+
+    try {
+      const pollRef = doc(this.firestore, 'polls/k82LMqsGGcuvf5vXLG7j');
+      const pollSnapshot = await getDoc(pollRef);
+
+      if (pollSnapshot.exists()) {
+        const pollData = pollSnapshot.data() as any;
+
+        // Decrement the vote count for the previously voted option
+        if (pollData.options[this.votedOptionIndex].votes > 0) {
+          pollData.options[this.votedOptionIndex].votes -= 1;
+          await updateDoc(pollRef, { options: pollData.options });
+
+          this.pollOptions[this.votedOptionIndex].votes -= 1;
+          this.userVoted = false;
+          this.votedOptionIndex = null; // Reset the voted option index
+        } else {
+          console.error('Invalid vote count.');
+        }
+      } else {
+        console.error('Poll not found in Firestore.');
+      }
+    } catch (error) {
+      console.error('Error while retracting vote:', error);
     }
   }
 

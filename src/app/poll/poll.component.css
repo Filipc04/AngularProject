@@ -58,4 +58,19 @@
     font-weight: bold;
     margin-top: 16px;
   }
+
+  .retract-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #d9534f;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .retract-button:hover {
+    background-color: #c9302c;
+  }
+  
   
