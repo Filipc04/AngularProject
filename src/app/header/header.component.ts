@@ -31,7 +31,7 @@ export class HeaderComponent {
   preventNavigation(event: Event) {
     event.preventDefault(); // Prevent navigation
     if (!this.authService.currentUserSig()) {
-      this.showToast(); // Show the alert (toast) if not logged in
+      this.showToast(); // Show the alert if not logged in
     }
   }
 

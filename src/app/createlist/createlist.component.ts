@@ -20,7 +20,7 @@ export class CreatelistComponent {
   resetTypeahead: boolean = false;
   resetRating: boolean = false;
 
-  private firestore: Firestore = inject(Firestore); // Inject Firestore
+  private firestore: Firestore = inject(Firestore);
 
   onAnimeSelected(anime: string) {
     this.selectedAnime = anime;
