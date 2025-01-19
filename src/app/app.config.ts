@@ -7,7 +7,7 @@ import { provideFirebaseApp, initializeApp} from '@angular/fire/app';
 import { firebaseConfig } from './environments/environment';
 import { getFirestore, provideFirestore} from '@angular/fire/firestore';
 import { getAuth, provideAuth } from '@angular/fire/auth';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,7 +15,7 @@ export const appConfig: ApplicationConfig = {
      provideClientHydration(),
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideFirestore(() => getFirestore()),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     provideAuth(() => getAuth())
   ]
 };
