@@ -21,5 +21,9 @@
   </ul>
 
   <!-- Display a thank-you message if the user has already voted -->
-  <p *ngIf="userVoted" style="color: green;">Thank you for voting!</p>
+  <p *ngIf="userVoted" style="color: green;">Thank you for voting!
+    <button (click)="retractVote()" class="retract-button">
+      Retract Vote
+    </button>
+  </p>
 </div>
