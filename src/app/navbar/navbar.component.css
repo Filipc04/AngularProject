@@ -2,7 +2,6 @@
   position: absolute;
   top: 78px;
   left: -250px;
-  height: calc(78vh - 78px - 100px);
   width: 250px;
   background-color: #333;
   padding: 0px 0;
@@ -48,11 +47,12 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  height: 40%;
+  padding: 20px;
+  
 }
 
 .navbar_image {
-  height: 40%;
+  height: 100px;
   border-radius: 5px;
 }
 

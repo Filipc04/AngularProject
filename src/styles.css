@@ -212,61 +212,95 @@ tr > td:last-child{
   text-align: center; 
 }
 
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .tables_with_image {
     flex-direction: column;
     align-items: center;
     margin: auto;
   }
 
-  .member_photos {
-    max-width: 50%;
-    margin-bottom: 20px;
+  .member_photos, .member_photos_2 {
+    max-width: 80%;
+    margin-bottom: 15px;
   }
 
-  .member_photos_2 {
-    max-width: 50%;
-    align-items: center;
-    margin-bottom: 20px;
+  .table_border, .list {
+    width: 90%;
+    margin: 0 auto 15px;
   }
 
-  .table_border {
-    width: 80%;
-    margin-left: 30px;
-    margin-bottom: 20px;
-  }
-
-  .list {
-    width: 80%;
-    margin-left: 30px;
-  }
-
-  .contributions_paragraph {
-    margin-left: 20px;
-    margin-right: 20px;
+  .contributions_paragraph, .about_div {
+    margin: 10px;
   }
 
   .team-members {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    font-size: 50px;
+    flex-direction: column;
+    font-size: 30px;
   }
 
-  .about_div {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
   .h1 {
     text-align: center;
-    padding-left: 20px;
+    padding: 10px;
   }
-  .h1 {
-    text-align: center;
-    padding-left: 20px;
+
+  .login_form, .signup_form {
+    padding: 20px;
+  }
+  
+  .login_form .button{
+    width: 200px;
   }
 }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .tables_with_image {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .member_photos, .member_photos_2 {
+    max-width: 60%;
+  }
+
+  .table_border, .list {
+    width: 85%;
+  }
+
+  .login_form, .signup_form {
+    padding: 25px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .table_border, .list {
+    width: 75%;
+  }
+
+  .login_form, .signup_form {
+    padding: 30px;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .table_border, .list {
+    width: 70%;
+  }
+
+  .login_form, .signup_form {
+    padding: 35px;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .table_border, .list {
+    width: 60%;
+  }
+
+  .login_form, .signup_form {
+    padding: 40px;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   header .header_links-container a,
   header .login-links,
@@ -278,42 +312,53 @@ tr > td:last-child{
     display: block;
   }
 }
-@media screen and (max-height: 1000px) {
-    .side-nav {
-      width: 100% !important;
-      max-height: 100vh !important;
-      left: -100% !important;
-      top: 0 !important;
-      padding: 0 !important;
-      overflow-y: auto !important;
-    }
-    .side-nav.active {
-      left: 0 !important;
-    }
-    .side-nav ul {
-      margin: 0 !important;
-      padding: 0 !important;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: center !important;
-      align-items: center !important;
-      height: 100% !important;
-    }
-    .side-nav li {
-      margin: 10px 0 !important;
-    }
-    .side-nav a {
-      font-size: 16px !important;
-      padding: 8px 15px !important;
-    }
-    .navbar_image_holder {
-      display: none !important;
-    }
-    .toast {
-      width: 90% !important;
-      max-width: 350px !important;
-    }
+
+@media screen and (max-width: 768px) {
+  .side-nav {
+    width: 100% !important;
+    max-height: 100vh !important;
+    left: -100% !important;
+    top: 0 !important;
+    padding: 0 !important;
+    overflow-y: auto !important;
   }
+
+  .side-nav.active {
+    left: 0 !important;
+  }
+
+  .side-nav ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100% !important;
+  }
+
+  .side-nav li {
+    margin: 10px 0 !important;
+  }
+
+  .side-nav a {
+    font-size: 16px !important;
+    padding: 8px 15px !important;
+  }
+
+  .navbar_image_holder {
+    display: none !important;
+  }
+
+  .toast {
+    width: 90% !important;
+    max-width: 350px !important;
+  }
+
+  .login_form .button{
+    width: 200px;
+  }
+}
 
 
 .headline_memberpages{
@@ -328,87 +373,6 @@ tr > td:last-child{
   color: green;
 }
 
-.login_form{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 420px;
-  background: transparent;
-  text-align: center;
-  border-radius: 10px;
-  padding: 30px 40px;
-  border: 2px solid rgba(255, 255, 255, .2);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-  margin: 40px;
-}
-
-.login_form .input_box{
-  position: relative;
-  width: 420px;
-  height: 50px;
-  margin: 30px 0;
-  padding: 0 10px;
-
-}
-
-.input_box input{
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  outline: none;
-  border: 2px solid rgba(255, 255, 255, .2);
-  border-radius: 40px;
-  font-size: 16px;
-  color: #1d2021;
-  padding: 20px 45px 20px 20px;
-}
-
-.input_box input::placeholder {
-  color: #d4be98;
-  opacity: 0.7; 
-}
-
-.input_box input:focus {
-  background: transparent; 
-  border-color: #d4be98; 
-  color: #d4be98; 
-  outline: none; 
-}
-
-.input_box i{
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-}
-
-.login_form .button{
-  width: 400px;
-  height: 45px;
-  background: #fff;
-  border: none;
-  outline: none;
-  border-radius: 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
-}
-
-.success_message{
-  color: green;
-  font-weight: bold;
-  font-size: 24px; 
-  text-align: center; 
-  margin-top: 10px;
-}
-
-.error_message{
-  margin-top: 10px;
-}
 
 button[ngbAccordionButton]:focus {
   outline: none; 
