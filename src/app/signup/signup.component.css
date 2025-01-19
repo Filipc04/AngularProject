@@ -101,3 +101,13 @@
 .error_message p.invalid {
   color: #f08080;
 }
+
+.input_box input:-webkit-autofill,
+.input_box input:-webkit-autofill:hover,
+.input_box input:-webkit-autofill:focus,
+.input_box input:-webkit-autofill:active {
+  background-color: transparent !important;
+  color: #d4be98 !important;
+  -webkit-text-fill-color: #d4be98 !important; 
+  transition: background-color 5000s ease-in-out 0s;
+}
