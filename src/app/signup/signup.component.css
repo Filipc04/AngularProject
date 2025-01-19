@@ -1,12 +1,15 @@
+h1{
+  color:#f08080;
+}
 .signup_form{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: transparent;
+  background-color:#1d2021;
   text-align: center;
   border-radius: 10px;
   padding: 30px 40px;
-  border: 2px solid rgba(255, 255, 255, .2);
+  border: 2px solid rgba(212, 190, 152, 0.2);
   backdrop-filter: blur(20px);
   box-shadow: 0 0 10px rgba(0, 0, 0, .3);
   margin: 40px;
@@ -16,7 +19,7 @@
   position: relative;
   height: 50px;
   margin: 30px 0;
-  border: 2px solid rgba(255, 255, 255, .2);
+  border: 2px solid rgba(212, 190, 152, 0.2);
   border-radius: 40px;
   font-size: 16px;
   color: #d4be98;
@@ -56,11 +59,11 @@
   font-size: 20px;
 }
 
-.signup_form .button{
+.signup_form .button {
   width: 200px;
   height: 45px;
-  background: #fff;
-  border: none;
+  background: linear-gradient(135deg, #ffdab9, #f08080); 
+  border: 2px solid #f08080; 
   outline: none;
   border-radius: 40px;
   box-shadow: 0 0 10px rgba(0, 0, 0, .1);
@@ -68,8 +71,34 @@
   font-size: 16px;
   font-weight: bold;
   color: #333;
+  transition: all 0.3s ease-in-out; 
+  position: relative;
+  overflow: hidden;
 }
 
+.signup_form .button:hover {
+  background: linear-gradient(135deg, #f08080, #ffdab9);
+  color: #fff;
+  transform: scale(1.05); 
+  box-shadow: 0 0 10px rgba(240, 128, 128, 0.5);
+}
+
+/* Add a subtle glowing effect */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(240, 128, 128, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(240, 128, 128, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(240, 128, 128, 0.5);
+  }
+}
+
+.signup_form .button:active {
+  animation: glow 0.5s ease-in-out;
+}
 
 /* Password validation messages */
 .password-requirements {
