@@ -1,30 +1,56 @@
 <div class="middle_content">
   <div class="signup_form">
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-<h1>Sign up</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h1>Sign Up</h1>
 
-<div *ngIf="errorMessage">
-  <div>{{ errorMessage }}</div>
+      <!-- Error message display -->
+      <div *ngIf="errorMessage" class="error_message">
+        <p>{{ errorMessage }}</p>
+      </div>
+
+      <!-- Username field -->
+      <div class="input_box">
+        <input type="text" placeholder="Username" formControlName="username" />
+        <i class="bx bxs-user"></i>
+      </div>
+
+      <!-- Email field -->
+      <div class="input_box">
+        <input type="email" placeholder="Email" formControlName="email" />
+        <i class="bx bxs-envelope"></i>
+      </div>
+
+      <!-- Password field -->
+      <div class="input_box">
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+          (input)="validatePassword()"
+        />
+        <i class="bx bxs-lock-alt"></i>
+      </div>
+
+      <!-- Password validation feedback -->
+      <div class="password-requirements">
+        <p [class.valid]="isLengthValid" [class.invalid]="!isLengthValid">
+          Password must be at least 8 characters long
+        </p>
+        <p [class.valid]="hasTwoUppercase" [class.invalid]="!hasTwoUppercase">
+          Password must have at least 2 uppercase letters
+        </p>
+        <p [class.valid]="hasOneDigit" [class.invalid]="!hasOneDigit">
+          Password must have at least 1 digit
+        </p>
+        <p [class.valid]="hasOneSpecialChar" [class.invalid]="!hasOneSpecialChar">
+          Password must have at least 1 special character
+        </p>
+      </div>
+
+      <!-- Sign up button -->
+      <div>
+        <button type="submit" class="button" [disabled]="!form.valid">Sign Up</button>
+      </div>
+    </form>
+  </div>
 </div>
-
-  <div class="input_box">
-    <input type="text" placeholder="Username" formControlName="username" />
-    <i class="bx bxs-user"></i>
-  </div>
-  <div class="input_box">
-    <input type="text" placeholder="Email" formControlName="email" />
-    <i class="bx bxs-envelope"></i>
-  </div>
-  <div class="input_box">
-    <input type="password" placeholder="Password" formControlName="password" />
-    <i class="bx bxs-lock-alt"></i>
-    <div *ngIf="form.controls['password'].invalid && form.controls['password'].touched">
-      <div *ngIf="form.controls['password'].hasError('required')">Password is required</div>
-      <div *ngIf="form.controls['password'].hasError('minlength')">Password must be at least 8 characters long</div>
-      <div *ngIf="form.controls['password'].hasError('pattern')">Password must meet the complexity requirements</div>
-    </div>
-  </div>
-  <div>
-    <button type="submit" class="button">Sign Up</button>
-  </div>
-</form>
