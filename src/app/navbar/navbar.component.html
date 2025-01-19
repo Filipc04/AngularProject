@@ -1,4 +1,4 @@
-<span class="side-nav" [ngClass]="{ 'active': isNavbarVisible }">
+<span class="side-nav" [ngClass]="{ 'active': isNavbarVisible, 'inactive': !isNavbarVisible }">
   <ul>
     <li>
       <b><a routerLink="/" routerLinkActive="active" style="color: #d4be98;">Home</a></b>

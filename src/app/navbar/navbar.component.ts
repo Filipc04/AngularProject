@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Router, NavigationStart } from '@angular/router';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../auth.service';
@@ -15,7 +16,18 @@ export class NavbarComponent {
 
   @ViewChild('toast', { static: false }) toast!: ElementRef;
 
-  constructor(public authService: AuthService, private renderer: Renderer2) {}
+  constructor(
+    public authService: AuthService,
+    private renderer: Renderer2,
+    private router: Router
+  ) {
+    // Close navbar when navigating to a new page
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        this.closeNavbar();
+      }
+    });
+  }
 
   toggleNavbar(): void {
     this.isNavbarVisible = !this.isNavbarVisible;
@@ -33,5 +45,10 @@ export class NavbarComponent {
     setTimeout(() => {
       this.renderer.removeClass(this.toast.nativeElement, 'show');
     }, 3000);
+  }
+
+  // Close navbar when switching pages
+  closeNavbar() {
+    this.isNavbarVisible = false;
   }
 }
