@@ -11,7 +11,7 @@
     </a>
   </div>
 
-  <!-- Centered "Top Animes" link -->
+  
   <div class="centered-link">
     <a routerLink="/topanimes" routerLinkActive="active" class="header_link">
        Top Rated <img src="assets/trophy_icon.png" alt="trophy icon"> Animes
@@ -30,7 +30,7 @@
       </a>
     }
     @if (authService.currentUserSig()) {
-      <div (click)="logout()" class="login_link"> Log out </div>
+      <div (click)="logout()" class="login_link"> <img src="assets/logout_icon.svg" alt="logout icon"> Log out </div>
     }
   </div>
 </header>
