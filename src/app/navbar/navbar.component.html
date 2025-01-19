@@ -1,30 +1,32 @@
 <span class="side-nav" [ngClass]="{ 'active': isNavbarVisible }">
-    <ul>
-      <li>
-        <b><a routerLink="/" routerLinkActive="active" style="color: #d4be98;">Home</a></b>
-      </li>
-      <li>
-        <b><a routerLink="/about" routerLinkActive="active" style="color: #d4be98;">About</a></b>
-      </li>
-      <li>
-        <b><a routerLink="/member1" routerLinkActive="active" style="color: #d4be98;">Filip's top 3 anime</a></b>
-      </li>
-      <li>
-        <b><a routerLink="/member2" routerLinkActive="active" style="color: #d4be98;">Abbe's top 3 anime</a></b>
-      </li>
-      <li>
-        <b><a routerLink="/login" routerLinkActive="active" style="color: #d4be98;">Login</a></b>
-      </li>
-      <li>
-        <b><a routerLink="/topanimes" routerLinkActive="active" style="color: #d4be98;">Top animes</a></b>
-      </li>
-      <li>
-        <b><a routerLink="/createlist" routerLinkActive="active" style="color: #d4be98;" [ngClass]="{ 'disabled': !authService.currentUserSig() }">Rate animes</a></b>
-      </li>
-    </ul>
-  
-    <span class="navbar_image_holder">
-      <img src="assets/sukuna_image.png" alt="anime image" class="navbar_image">
-    </span>
+  <ul>
+    <li>
+      <b><a routerLink="/" routerLinkActive="active" style="color: #d4be98;">Home</a></b>
+    </li>
+    <li>
+      <b><a routerLink="/about" routerLinkActive="active" style="color: #d4be98;">About</a></b>
+    </li>
+    <li>
+      <b><a routerLink="/member1" routerLinkActive="active" style="color: #d4be98;">Filip's top 3 anime</a></b>
+    </li>
+    <li>
+      <b><a routerLink="/member2" routerLinkActive="active" style="color: #d4be98;">Abbe's top 3 anime</a></b>
+    </li>
+    <li>
+      <b><a routerLink="/login" routerLinkActive="active" style="color: #d4be98;">Login</a></b>
+    </li>
+    <li>
+      <b><a routerLink="/topanimes" routerLinkActive="active" style="color: #d4be98;">Top animes</a></b>
+    </li>
+    <li>
+      <b><a routerLink="/createlist" routerLinkActive="active" style="color: #d4be98;" [ngClass]="{ 'disabled': !authService.currentUserSig() }" (click)="checkAuthAndShowToast($event)">Rate animes</a></b>
+    </li>
+  </ul>
+
+  <span class="navbar_image_holder">
+    <img src="assets/sukuna_image.png" alt="anime image" class="navbar_image">
   </span>
-  
+
+  <!-- Toast message -->
+  <div #toast class="toast">⚠️ You need to be logged in to rate animes!</div>
+</span>
