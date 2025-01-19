@@ -16,10 +16,10 @@
         <b><a routerLink="/login" routerLinkActive="active" style="color: #d4be98;">Login</a></b>
       </li>
       <li>
-        <b><a routerLink="/createlist" routerLinkActive="active" style="color: #d4be98;" [ngClass]="{ 'disabled': !authService.currentUserSig() }">Rate animes</a></b>
+        <b><a routerLink="/topanimes" routerLinkActive="active" style="color: #d4be98;">Top animes</a></b>
       </li>
       <li>
-        <b><a routerLink="/topanimes" routerLinkActive="active" style="color: #d4be98;">Top animes</a></b>
+        <b><a routerLink="/createlist" routerLinkActive="active" style="color: #d4be98;" [ngClass]="{ 'disabled': !authService.currentUserSig() }">Rate animes</a></b>
       </li>
     </ul>
   

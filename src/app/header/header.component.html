@@ -9,26 +9,28 @@
     <a routerLink="/about" routerLinkActive="active" class="header_link">
       <img src="assets/about_icon.svg" alt="about icon"> About
     </a>
+  </div>
+
+  <!-- Centered "Top Animes" link -->
+  <div class="centered-link">
     <a routerLink="/topanimes" routerLinkActive="active" class="header_link">
-      <img src="assets/trophy_icon.png" alt="trophy icon"> Top Animes
-    </a>
-    <a routerLink="/createlist" routerLinkActive="active" class="login_link" [ngClass]="{ 'disabled': !authService.currentUserSig() }">
-      <img src="assets/star_icon.svg" alt="rate icon"> Rate animes
+       Top Rated <img src="assets/trophy_icon.png" alt="trophy icon"> Animes
     </a>
   </div>
 
-  @if (authService.currentUserSig() == null) {
   <div class="login-links">
-    <a routerLink="/login" routerLinkActive="active" class="login_link">
-      <img src="assets/login_icon.svg" alt="login icon"> Login
+    <a routerLink="/createlist" routerLinkActive="active" class="login_link" 
+       [ngClass]="{ 'disabled': !authService.currentUserSig() }">
+      <img src="assets/star_icon.svg" alt="rate icon"> Rate animes
     </a>
+
+    @if (authService.currentUserSig() == null) {
+      <a routerLink="/login" routerLinkActive="active" class="login_link">
+        <img src="assets/login_icon.svg" alt="login icon"> Login
+      </a>
+    }
+    @if (authService.currentUserSig()) {
+      <div (click)="logout()" class="login_link"> Log out </div>
+    }
   </div>
-}
-@if (authService.currentUserSig()) {
-  <div class="login-links">
-    <div (click)="logout()" class="login_link">
-      Log out
-    </div>
-  </div>
-}
 </header>

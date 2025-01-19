@@ -1,24 +1,32 @@
 header {
   display: flex;
-  justify-content: space-between; /* Space out the elements in the header */
-  gap: 25px;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--primary-black);
   width: 100%;
   box-sizing: border-box;
-  align-items: center;
   padding: 20px;
+  position: relative; /* Ensures absolute positioning works within the header */
 }
 
 .header_links-container {
   display: flex;
-  gap: 25px; /* Space between Home and About links */
+  gap: 25px;
+}
+
+.centered-link {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .login-links {
   display: flex;
-  gap: 15px; /* Space between createlist and login links */
+  gap: 15px;
   cursor: pointer;
+  margin-left: auto;
 }
+
 
 .header_link, .login_link {
   color: var(--primary-white);
