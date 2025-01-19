@@ -27,7 +27,6 @@ header {
   margin-left: auto;
 }
 
-
 .header_link, .login_link {
   color: var(--primary-white);
   font-size: 25px;
@@ -35,21 +34,13 @@ header {
   position: relative;
 }
 
+/* Remove the underline effect from all links, including the "Rate animes" link */
 .header_link::after, .login_link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 100%;
-  height: 2px;
-  background-color: var(--primary-white);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
+  content: none; /* No underline for any link */
 }
 
 .header_link:hover::after, .login_link:hover::after {
-  transform: scaleX(1);
+  transform: none; /* Ensure no transform happens on hover */
 }
 
 .login_link img, .header_link img {
@@ -87,13 +78,11 @@ header {
 
 .disabled {
   color: gray;
-  pointer-events: none; /* Disable clicking */
 }
 
 .disabled img {
   opacity: 0.5; /* Make the icon appear disabled */
 }
-
 
 button {
   padding: 10px 20px;
@@ -101,6 +90,7 @@ button {
   cursor: pointer;
 }
 
+/* Toast styles */
 .toast {
   position: fixed;
   top: 10px;
@@ -108,13 +98,14 @@ button {
   transform: translateX(-50%);
   background-color: #f44336;
   color: white;
-  padding: 15px;
+  padding: 15px 30px; /* Increased padding for width */
   border-radius: 5px;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0s 0.5s; /* Delay visibility change */
   text-align: center;
-  font-size: 15px;
+  font-size: 17px;
+  width: 400px; /* Set fixed width */
 }
 
 .toast.show {
@@ -127,5 +118,3 @@ button {
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0s 0.5s; /* Transition visibility after opacity */
 }
-
-

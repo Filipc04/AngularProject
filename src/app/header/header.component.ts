@@ -26,6 +26,15 @@ export class HeaderComponent {
       this.renderer.removeClass(this.toast.nativeElement, 'show');
     }, 3000);
   }
+
+  // Prevent default link navigation if the user is not logged in
+  preventNavigation(event: Event) {
+    event.preventDefault(); // Prevent navigation
+    if (!this.authService.currentUserSig()) {
+      this.showToast(); // Show the alert (toast) if not logged in
+    }
+  }
+
   logout(): void {
     this.authService.logout().subscribe(() => {
       console.log('User logged out');
