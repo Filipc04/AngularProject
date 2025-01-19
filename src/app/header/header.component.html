@@ -12,6 +12,9 @@
     <a routerLink="/topanimes" routerLinkActive="active" class="header_link">
       <img src="assets/trophy_icon.png" alt="trophy icon"> Top Animes
     </a>
+    <a routerLink="/createlist" routerLinkActive="active" class="login_link" [ngClass]="{ 'disabled': !authService.currentUserSig() }">
+      <img src="assets/star_icon.svg" alt="rate icon"> Rate animes
+    </a>
   </div>
 
   @if (authService.currentUserSig() == null) {

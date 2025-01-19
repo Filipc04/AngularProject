@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../auth.service'; 
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +12,8 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
   isNavbarVisible: boolean = false;
+
+  constructor(public authService: AuthService) {}
 
   toggleNavbar(): void {
     this.isNavbarVisible = !this.isNavbarVisible;
