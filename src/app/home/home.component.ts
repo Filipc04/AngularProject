@@ -5,7 +5,7 @@ import { SlideshowComponent } from '../slideshow/slideshow.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, RouterOutlet, SlideshowComponent],
+  imports: [RouterLink, RouterLinkActive, SlideshowComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

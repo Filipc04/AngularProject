@@ -34,14 +34,27 @@ header {
   position: relative;
 }
 
-/* Remove the underline effect from all links, including the "Rate animes" link */
 .header_link::after, .login_link::after {
-  content: none; /* No underline for any link */
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-white);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 .header_link:hover::after, .login_link:hover::after {
-  transform: none; /* Ensure no transform happens on hover */
+  transform: scaleX(1);
 }
+
+.login_link.disabled::after {
+  content: none; 
+}
+
 
 .login_link img, .header_link img {
   height: 20px;
