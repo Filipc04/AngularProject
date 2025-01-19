@@ -262,7 +262,59 @@ tr > td:last-child{
     text-align: center;
     padding-left: 20px;
   }
+  .h1 {
+    text-align: center;
+    padding-left: 20px;
+  }
 }
+@media screen and (max-width: 1000px) {
+  header .header_links-container a,
+  header .login-links,
+  header .centered-link {
+    display: none;
+  }
+
+  header .header_links-container .toggle-navbar-btn {
+    display: block;
+  }
+}
+@media screen and (max-height: 1000px) {
+    .side-nav {
+      width: 100% !important;
+      max-height: 100vh !important;
+      left: -100% !important;
+      top: 0 !important;
+      padding: 0 !important;
+      overflow-y: auto !important;
+    }
+    .side-nav.active {
+      left: 0 !important;
+    }
+    .side-nav ul {
+      margin: 0 !important;
+      padding: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      height: 100% !important;
+    }
+    .side-nav li {
+      margin: 10px 0 !important;
+    }
+    .side-nav a {
+      font-size: 16px !important;
+      padding: 8px 15px !important;
+    }
+    .navbar_image_holder {
+      display: none !important;
+    }
+    .toast {
+      width: 90% !important;
+      max-width: 350px !important;
+    }
+  }
+
 
 .headline_memberpages{
   margin: 30px;

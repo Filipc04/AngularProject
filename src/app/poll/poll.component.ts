@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { Firestore, doc, getDoc, updateDoc } from '@angular/fire/firestore';
-import { AuthService } from '../auth.service'; // Adjust the path if necessary
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-poll',
@@ -13,7 +13,7 @@ import { AuthService } from '../auth.service'; // Adjust the path if necessary
 })
 export class PollComponent {
   private firestore = inject(Firestore);
-  private authService = inject(AuthService); // Inject AuthService
+  private authService = inject(AuthService);
 
   pollOptions = [
     { name: 'Option 1', votes: 0 },
@@ -24,7 +24,7 @@ export class PollComponent {
   votedOptionIndex: number | null = null; // Track which option the user voted for
 
   get isLoggedIn(): boolean {
-    return this.authService.currentUserSig() !== null; // Adjust to match your AuthService logic
+    return this.authService.currentUserSig() !== null; 
   }
 
   async vote(optionIndex: number) {

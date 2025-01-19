@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
 import { Router } from '@angular/router';
 import { Auth, createUserWithEmailAndPassword, updateProfile } from '@angular/fire/auth';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [ReactiveFormsModule], // Import ReactiveFormsModule here
+  imports: [ReactiveFormsModule, CommonModule], // Import ReactiveFormsModule here
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
 })

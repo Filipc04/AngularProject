@@ -12,12 +12,12 @@ import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent }, // Default route (home page)
-    { path: 'about', component: AboutComponent }, // Route for the About page
+    { path: 'about', component: AboutComponent },
     { path: 'member1', component: Member1Component },
     { path: 'member2', component: Member2Component },
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
-    { path: 'createlist', component: CreatelistComponent, canActivate: [authGuard] },
+    { path: 'createlist', component: CreatelistComponent, canActivate: [authGuard] }, // createlist only accessible when logged in
     { path: 'topanimes', component: TopanimesComponent},
     { path: '**', redirectTo: '' }, // Redirect unknown routes to home
   ];

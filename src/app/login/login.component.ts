@@ -1,14 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgIf, NgClass, CommonModule } from '@angular/common';
-import { RouterModule, Router } from '@angular/router';  // Import Router for navigation
-import { AuthService } from '../auth.service';  // Ensure this path is correct
+import { RouterModule, Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, NgIf, NgClass, RouterModule, ReactiveFormsModule],  // Required imports
+  imports: [FormsModule, NgIf, NgClass, RouterModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })

@@ -9,7 +9,7 @@
   <ul>
     <li *ngFor="let option of pollOptions; let i = index">
       <span>{{ option.name }}</span>
-      <!-- Gray out the button and disable it if the user is not logged in -->
+      <!-- Disable it if the user is not logged in -->
       <button 
         (click)="vote(i)" 
         [disabled]="!isLoggedIn || userVoted" 
@@ -20,7 +20,7 @@
     </li>
   </ul>
 
-  <!-- Display a thank-you message if the user has already voted -->
+  <!-- Display a thank-you if the user has already voted -->
   <p *ngIf="userVoted" style="color: green;">Thank you for voting!
     <button (click)="retractVote()" class="retract-button">
       Retract Vote
