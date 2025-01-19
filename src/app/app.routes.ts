@@ -8,6 +8,7 @@ import { SignupComponent } from './signup/signup.component';
 import { RateComponent } from './rate/rate.component';
 import { CreatelistComponent } from './createlist/createlist.component';
 import { TopanimesComponent } from './topanimes/topanimes.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent }, // Default route (home page)
@@ -16,7 +17,7 @@ export const routes: Routes = [
     { path: 'member2', component: Member2Component },
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
-    { path: 'createlist', component: CreatelistComponent},
+    { path: 'createlist', component: CreatelistComponent, canActivate: [authGuard] },
     { path: 'topanimes', component: TopanimesComponent},
     { path: '**', redirectTo: '' }, // Redirect unknown routes to home
   ];
