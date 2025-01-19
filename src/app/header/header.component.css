@@ -6,7 +6,7 @@ header {
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
-  position: relative; /* Ensures absolute positioning works within the header */
+  position: relative; 
 }
 
 .header_links-container {

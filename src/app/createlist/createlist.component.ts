@@ -29,6 +29,12 @@ export class CreatelistComponent {
   onRatingSelected(rating: number) {
     this.selectedRating = rating;
   }
+  
+  removeAnimeFromList(index: number) {
+    this.animeList = this.animeList.filter((_, i) => i !== index);
+  }
+  
+  
 
   async addAnimeToList() {
     if (this.selectedAnime && this.selectedRating) {

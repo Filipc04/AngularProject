@@ -4,16 +4,21 @@
 
   <button class="rate_button" (click)="addRippleEffect($event); addAnimeToList()">Add to your anime list!</button>
 
-  <table class="user_table" *ngIf="animeList.length > 0">
-    <tr>
-      <th>Anime</th>
-      <th>Rating</th>
-    </tr>
-    <tr *ngFor="let anime of animeList">
-      <td>{{ anime.name }}</td>
-      <td>{{ anime.rating }}/10 <i class='bx bxs-star' style='color:#d0c722'></i></td>
-    </tr>
-  </table>
+  <div class="table-container">
+    <table class="user_table" *ngIf="animeList.length > 0">
+      <tr>
+        <th>Anime</th>
+        <th>Rating</th>
+      </tr>
+      <tr *ngFor="let anime of animeList; let i = index" class="anime-row">
+        <td>{{ anime.name }}</td>
+        <td>{{ anime.rating }}/10 <i class='bx bxs-star' style='color:#d0c722'></i></td>
+        <button class="delete-button" (click)="removeAnimeFromList(i)"><i class='bx bx-x'></i></button>
+      </tr>
+    </table>
+  </div>
+  
+  
 
  
 </div>
